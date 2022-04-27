@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+
+<body>
+<div class="container">
+
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+
+
+    <!--    <h2><span th:text="${loginMember.userId}"></span>님 반갑습니다</h2>-->
+
+    <h4 th:text="|${loginUser.userId}님 반갑습니다!!|">로그인 사용자 이름</h4>
+
+
+
+    <div class="col">
+        <form th:action="@{/logout}" method="post">
+            <button class="w-100 btn btn-dark btn-lg"
+                    onclick="location.href='home.html'" type="submit">
+                로그아웃
+            </button>
+        </form>
+    </div>
+
+
+<!--    <p>-->
+<!--        <a class="btn btn-lg btn-secondary" href="/users">회원 목록</a>-->
+<!--    <p class="lead">그룹 기능</p>-->
+<!--    <a class="btn btn-lg btn-dark" href="/teams/newTeam">그룹 생성</a>-->
+<!--    <a class="btn btn-lg btn-dark" href="/team">그룹 목록</a>-->
+<!--    </p>-->
+
+
+
+
+    <div th:replace="fragments/footer :: footer" />
+</div>
+</body>
+</html>
+
+
+

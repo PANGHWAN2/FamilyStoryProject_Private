@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Gid</th>
+                <th>그룹 이름</th>
+                <th>그룹 아이디</th>
+                <th>그룹 이미지</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="team: ${teams}">
+
+                <td th:text="${team.getTId()}"></td>
+                <td th:text="${team.teamName}"></td>
+                <td th:text="${team.teamId}"></td>
+                <td th:text="${team.teamImage}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>

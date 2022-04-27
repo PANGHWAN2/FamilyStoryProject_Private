@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>uid</th>
+                <th>userId</th>
+                <th>passWord</th>
+                <th>name</th>
+                <th>nickname</th>
+                <th>email</th>
+                <th>phoneNumber</th>
+                <th>birthday</th>
+                <th>image</th>
+                <th>mainGroupid</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="user : ${users}">
+
+                <td th:text="${user.getUId()}"></td>
+                <td th:text="${user.userId}"></td>
+                <td th:text="${user.passWord}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.nickName}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.phoneNumber}"></td>
+                <td th:text="${user.birthDay}"></td>
+                <td th:text="${user.image}"></td>
+                <td th:text="${user.mainGroupId}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>
